@@ -3,6 +3,7 @@
 
 #include "FirstPersonCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "BaseInteractable.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -47,8 +48,24 @@ void AFirstPersonCharacter::CheckForInteractable()
 
 	FVector PlayerViewLocation;
 	FRotator PlayerViewRotation;
+	GetWorld()->GetFirstPlayerController()->GetPlayerViewPoint(PlayerViewLocation, PlayerViewRotation);
 
-	ActorLineTraceSingle(HitResult, );
+	FVector EndLocation = PlayerViewLocation + PlayerViewRotation.Vector() * InteractDistance;
+
+	bool CanInteract = GetWorld()->LineTraceSingleByChannel
+	(
+		HitResult, 
+		PlayerViewLocation, 
+		EndLocation,
+		ECC_Visibility
+	);
+
+	CurrentInteractee = Cast<UBaseInteractable>(HitResult.GetActor()->GetComponentByClass(UBaseInteractable::StaticClass()));
+
+	if (CanInteract && CurrentInteractee)
+	{
+		UE_LOG(LogTemp, Warning, TEXT("Can interact with base interactable!!!"));
+	}
 }
 
 #pragma region Input Functions
