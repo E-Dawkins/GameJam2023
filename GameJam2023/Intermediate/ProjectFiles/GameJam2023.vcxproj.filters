@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\GameJam2023.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{794452F7-3CF8-4C0B-91AD-918A675838E7}</UniqueIdentifier>
+      <UniqueIdentifier>{9432B462-E8C1-45E6-AC58-5879D646AD3C}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\GameJam2023.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{95DE8F71-C6BF-4A2D-9FC9-21BF73112794}</UniqueIdentifier>
+      <UniqueIdentifier>{7900DDBF-7A59-4467-9D12-53166E0CA161}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\GameJam2023">
-      <UniqueIdentifier>{36AA8C87-2299-4582-B0E8-33C280203E83}</UniqueIdentifier>
+      <UniqueIdentifier>{566B62A8-2090-42F9-A7FE-2B4F5B5D0923}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\GameJam2023\FirstPersonCharacter.cpp">
       <Filter>Source\GameJam2023</Filter>

@@ -231,8 +231,8 @@
 /I Editor\Kismet\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\ClothingSystemRuntimeInterface
 /I Runtime\ClothingSystemRuntimeInterface\Public
-/I C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023
-/I C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Source
+/I C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023
+/I C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Source
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\AugmentedReality
 /I Runtime\AugmentedReality\Public
 /I ..\Intermediate\Build\Win64\UE4Editor\Inc\MRMesh
@@ -266,12 +266,12 @@
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\shared"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\um"
 /I "C:\Program Files (x86)\Windows Kits\10\include\10.0.18362.0\winrt"
-/FI"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Yu"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
-/Fp"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
-"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023\GameJam2023.init.gen.cpp"
-/FI"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\Definitions.GameJam2023.h"
-/Fo"C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\GameJam2023.init.gen.cpp.obj"
+/FI"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Yu"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h"
+/Fp"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\GameJam2023Editor\Development\Engine\SharedPCH.Engine.ShadowErrors.h.pch"
+"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023\GameJam2023.init.gen.cpp"
+/FI"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\Definitions.GameJam2023.h"
+/Fo"C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\GameJam2023.init.gen.cpp.obj"
 /TP
 /GR-
 /W4

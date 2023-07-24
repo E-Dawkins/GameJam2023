@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeGameJam2023_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0x857DE377,
+				0xFCA8CCF0,
 				0x09F034AE,
 				METADATA_PARAMS(nullptr, 0)
 			};

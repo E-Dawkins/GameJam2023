@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "GameJam2023",
-			"Path": "C:\\Users\\s213634\\Desktop\\GitHub\\GameJam2023\\GameJam2023\\Source\\GameJam2023.Target.cs",
+			"Path": "C:\\Users\\s213902\\Documents\\GitHub\\GameJam2023\\GameJam2023\\Source\\GameJam2023.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "GameJam2023Editor",
-			"Path": "C:\\Users\\s213634\\Desktop\\GitHub\\GameJam2023\\GameJam2023\\Source\\GameJam2023Editor.Target.cs",
+			"Path": "C:\\Users\\s213902\\Documents\\GitHub\\GameJam2023\\GameJam2023\\Source\\GameJam2023Editor.Target.cs",
 			"Type": "Editor"
 		}
 	]

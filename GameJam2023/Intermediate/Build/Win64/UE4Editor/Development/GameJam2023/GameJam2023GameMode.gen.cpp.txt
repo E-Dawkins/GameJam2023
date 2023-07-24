@@ -1,9 +1,9 @@
-C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\Definitions.GameJam2023.h
+C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\Definitions.GameJam2023.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Source\GameJam2023/GameJam2023GameMode.h
+C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Source\GameJam2023/GameJam2023GameMode.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/GameModeBase.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Source\Runtime\Engine\Classes\Engine/ServerStatReplicator.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\ServerStatReplicator.generated.h
 C:\Program Files\Epic Games\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\GameModeBase.generated.h
-C:\Users\s213634\Desktop\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023\GameJam2023GameMode.generated.h
+C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Inc\GameJam2023\GameJam2023GameMode.generated.h
