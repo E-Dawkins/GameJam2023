@@ -26,6 +26,28 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+private:
+	void CheckForInteractable();
+
+	// --- Input Functions ---
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	void LookYaw(float AxisValue);
+	void LookPitch(float AxisValue);
+
+	void DoJump();
+
+public:
 	UPROPERTY(EditAnywhere)
-		float MoveSpeed;
+		float InteractDistance = 500;
+
+	UPROPERTY(EditAnywhere)
+		float MoveSpeed = 10;
+
+	UPROPERTY(EditAnywhere)
+		float LookSpeed = 1;
+
+private:
+	UPROPERTY()
+		class ABaseInteractable* CurrentInteractee;
 };
