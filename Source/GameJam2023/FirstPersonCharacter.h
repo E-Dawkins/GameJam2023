@@ -27,5 +27,14 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
 	UPROPERTY(EditAnywhere)
-		float MoveSpeed;
+		float MoveSpeed = 10;
+
+	UPROPERTY(EditAnywhere)
+		float LookSpeed = 1;
+
+private:
+	void MoveForward(float AxisValue);
+	void MoveRight(float AxisValue);
+	void LookYaw(float AxisValue);
+	void LookPitch(float AxisValue);
 };
