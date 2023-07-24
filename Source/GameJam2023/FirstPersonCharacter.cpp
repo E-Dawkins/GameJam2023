@@ -30,5 +30,29 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &AFirstPersonCharacter::MoveForward);
+	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &AFirstPersonCharacter::MoveRight);
+	PlayerInputComponent->BindAxis(TEXT("Yaw"), this, &AFirstPersonCharacter::LookYaw);
+	PlayerInputComponent->BindAxis(TEXT("Pitch"), this, &AFirstPersonCharacter::LookPitch);
+}
+
+void AFirstPersonCharacter::MoveForward(float AxisValue)
+{
+	AddMovementInput(GetActorForwardVector(), AxisValue * MoveSpeed);
+}
+
+void AFirstPersonCharacter::MoveRight(float AxisValue)
+{
+	AddMovementInput(GetActorRightVector(), AxisValue * MoveSpeed);
+}
+
+void AFirstPersonCharacter::LookYaw(float AxisValue)
+{
+	AddControllerYawInput(AxisValue * LookSpeed);
+}
+
+void AFirstPersonCharacter::LookPitch(float AxisValue)
+{
+	AddControllerPitchInput(AxisValue * LookSpeed);
 }
 
