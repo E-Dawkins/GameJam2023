@@ -16,6 +16,11 @@ void AComboLock::BeginPlay()
 {
 	Super::BeginPlay();
 	
+	for (auto b : Buttons)
+	{
+		b->Callback.BindUObject(this, &AComboLock::OnButtonPressed);
+	}
+
 }
 
 // Called every frame
@@ -25,3 +30,7 @@ void AComboLock::Tick(float DeltaTime)
 
 }
 
+void AComboLock::OnButtonPressed(AComboButton* PressedButton)
+{
+	 
+}

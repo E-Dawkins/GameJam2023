@@ -2,6 +2,7 @@
 
 
 #include "Item.h"
+#include "FirstPersonCharacter.h"
 
 // Sets default values for this component's properties
 AItem::AItem()
@@ -21,7 +22,11 @@ void AItem::OnInteract()
 {
 	Super::OnInteract();
 
-	UE_LOG(LogTemp, Warning, TEXT("Item Picked UP"));
-
+	AFirstPersonCharacter* Player = Cast<AFirstPersonCharacter>(GetWorld()->GetFirstPlayerController()->GetOwner());
+	
+	if (Player)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Player: %s"), *Player->GetName());
+	}
 }
 
