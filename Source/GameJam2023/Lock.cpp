@@ -1,27 +1,28 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
-#include "Item.h"
+#include "Lock.h"
 
 // Sets default values for this component's properties
-AItem::AItem()
+ALock::ALock()
 {
+
+}
+
+
+// Called when the game starts
+void ALock::BeginPlay()
+{
+	Super::BeginPlay();
 	
 }
 
-// Called when the game starts
-void AItem::BeginPlay()
-{
-	Super::BeginPlay();
-
-
-}
-
-void AItem::OnInteract()
+void ALock::OnInteract()
 {
 	Super::OnInteract();
 
-	UE_LOG(LogTemp, Warning, TEXT("Item Picked UP"));
-
+	if (Key)
+	{
+		UE_LOG(LogTemp, Error, TEXT("Key: %s"), *Key->GetName());
+	}
 }
-

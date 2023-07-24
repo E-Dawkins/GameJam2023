@@ -3,25 +3,29 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "BaseInteractable.h"
+#include "Item.h"
 
-#include "Item.generated.h"
+#include "Lock.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class GAMEJAM2023_API AItem : public ABaseInteractable
+class GAMEJAM2023_API ALock : public ABaseInteractable
 {
-	GENERATED_BODY() 
+	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	AItem();
+	ALock();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	virtual void OnInteract() override;
+
+public:
+	UPROPERTY(EditAnywhere)
+		AItem* Key;
 		
 };

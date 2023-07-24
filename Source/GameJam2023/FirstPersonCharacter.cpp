@@ -52,7 +52,7 @@ void AFirstPersonCharacter::CheckForInteractable()
 
 	FVector EndLocation = PlayerViewLocation + PlayerViewRotation.Vector() * InteractDistance;
 
-	bool CanInteract = GetWorld()->LineTraceSingleByChannel
+	GetWorld()->LineTraceSingleByChannel
 	(
 		HitResult, 
 		PlayerViewLocation, 
@@ -60,11 +60,14 @@ void AFirstPersonCharacter::CheckForInteractable()
 		ECC_Visibility
 	);
 
-	CurrentInteractee = Cast<UBaseInteractable>(HitResult.GetActor()->GetComponentByClass(UBaseInteractable::StaticClass()));
-
-	if (CanInteract && CurrentInteractee)
+	if (HitResult.GetActor())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Can interact with base interactable!!!"));
+		CurrentInteractee = Cast<ABaseInteractable>(HitResult.GetActor());
+
+		if (CurrentInteractee && CurrentInteractee->bShouldInteract)
+		{
+			CurrentInteractee->OnInteract();
+		}
 	}
 }
 

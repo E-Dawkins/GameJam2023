@@ -49,5 +49,5 @@ public:
 
 private:
 	UPROPERTY()
-		class UBaseInteractable* CurrentInteractee;
+		class ABaseInteractable* CurrentInteractee;
 };

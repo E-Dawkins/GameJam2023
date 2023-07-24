@@ -3,18 +3,18 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
 #include "BaseInteractable.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class GAMEJAM2023_API UBaseInteractable : public UActorComponent
+class GAMEJAM2023_API ABaseInteractable : public AActor
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	UBaseInteractable();
+	ABaseInteractable();
 
 protected:
 	// Called when the game starts
@@ -22,5 +22,11 @@ protected:
 
 public:
 	virtual void OnInteract();
+
+	void SetInteractState(bool State);
+	bool bShouldInteract = false;
+
+	UPROPERTY(EditInstanceOnly)
+		UStaticMeshComponent* StaticMesh;
 
 };
