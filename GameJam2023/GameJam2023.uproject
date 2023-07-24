@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{C6570E4B-4CA3-96B5-EA06-DE8BFF527DAC}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "GameJam2023",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
