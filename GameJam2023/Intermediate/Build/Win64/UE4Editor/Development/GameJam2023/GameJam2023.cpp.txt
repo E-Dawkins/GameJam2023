@@ -1,2 +1,0 @@
-C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Intermediate\Build\Win64\UE4Editor\Development\GameJam2023\Definitions.GameJam2023.h
-C:\Users\s213902\Documents\GitHub\GameJam2023\GameJam2023\Source\GameJam2023\GameJam2023.h
