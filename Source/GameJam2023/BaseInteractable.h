@@ -21,6 +21,6 @@ protected:
 	virtual void BeginPlay() override;
 
 public:
-	virtual void OnInteract() {}
+	virtual void OnInteract();
 
 };

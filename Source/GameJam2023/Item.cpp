@@ -32,8 +32,10 @@ void UItem::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentT
 	// ...
 }
 
-void UItem::AddToInventory()
+void UItem::OnInteract()
 {
+	Super::OnInteract();
 	UE_LOG(LogTemp, Warning, TEXT("Item Picked UP"));
+
 }
 

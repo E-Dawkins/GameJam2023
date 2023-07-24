@@ -20,3 +20,7 @@ void UBaseInteractable::BeginPlay()
 	// ...
 	
 }
+
+void UBaseInteractable::OnInteract()
+{
+}
