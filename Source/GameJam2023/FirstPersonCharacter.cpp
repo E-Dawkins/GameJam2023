@@ -2,6 +2,7 @@
 
 
 #include "FirstPersonCharacter.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -23,6 +24,8 @@ void AFirstPersonCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	CheckForInteractable();
+
 }
 
 // Called to bind functionality to input
@@ -34,8 +37,21 @@ void AFirstPersonCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &AFirstPersonCharacter::MoveRight);
 	PlayerInputComponent->BindAxis(TEXT("Yaw"), this, &AFirstPersonCharacter::LookYaw);
 	PlayerInputComponent->BindAxis(TEXT("Pitch"), this, &AFirstPersonCharacter::LookPitch);
+
+	PlayerInputComponent->BindAction(TEXT("Jump"), IE_Pressed, this, &AFirstPersonCharacter::DoJump);
 }
 
+void AFirstPersonCharacter::CheckForInteractable()
+{
+	FHitResult HitResult;
+
+	FVector PlayerViewLocation;
+	FRotator PlayerViewRotation;
+
+	ActorLineTraceSingle(HitResult, );
+}
+
+#pragma region Input Functions
 void AFirstPersonCharacter::MoveForward(float AxisValue)
 {
 	AddMovementInput(GetActorForwardVector(), AxisValue * MoveSpeed);
@@ -56,3 +72,8 @@ void AFirstPersonCharacter::LookPitch(float AxisValue)
 	AddControllerPitchInput(AxisValue * LookSpeed);
 }
 
+void AFirstPersonCharacter::DoJump()
+{
+	Jump();
+}
+#pragma endregion

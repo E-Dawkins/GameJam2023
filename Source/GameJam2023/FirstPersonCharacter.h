@@ -33,8 +33,13 @@ public:
 		float LookSpeed = 1;
 
 private:
+	void CheckForInteractable();
+
+	// --- Input Functions ---
 	void MoveForward(float AxisValue);
 	void MoveRight(float AxisValue);
 	void LookYaw(float AxisValue);
 	void LookPitch(float AxisValue);
+
+	void DoJump();
 };
