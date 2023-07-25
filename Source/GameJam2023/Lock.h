@@ -29,5 +29,8 @@ public:
 		AItem* Key;
 
 	void OnUnlock();
+
+	UPROPERTY(EditAnywhere)
+		AActor* ActorToDestroy;
 		
 };

@@ -37,5 +37,8 @@ void ALock::OnInteract()
 
 void ALock::OnUnlock()
 {
-	UE_LOG(LogTemp, Warning, TEXT("Lock unlocked! :)"), *Key->GetName());
+	if (ActorToDestroy)
+	{
+		ActorToDestroy->Destroy();
+	}
 }
