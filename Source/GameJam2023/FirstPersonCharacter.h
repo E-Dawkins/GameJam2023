@@ -4,6 +4,8 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "BaseInteractable.h"
+
 #include "FirstPersonCharacter.generated.h"
 
 UCLASS()
@@ -47,7 +49,10 @@ public:
 	UPROPERTY(EditAnywhere)
 		float LookSpeed = 1;
 
+	UPROPERTY(VisibleAnywhere)
+		TArray<ABaseInteractable*> Inventory;
+
 private:
 	UPROPERTY()
-		class ABaseInteractable* CurrentInteractee;
+		ABaseInteractable* CurrentInteractee;
 };

@@ -3,7 +3,6 @@
 
 #include "FirstPersonCharacter.h"
 #include "Kismet/GameplayStatics.h"
-#include "BaseInteractable.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()

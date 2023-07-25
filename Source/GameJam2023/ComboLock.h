@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
-#include "BaseInteractable.h"
+#include "ComboButton.h"
 
 #include "ComboLock.generated.h"
 
@@ -26,6 +26,12 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	UPROPERTY(EditAnywhere)
-		TArray<ABaseInteractable*> Buttons;
+		TArray<AComboButton*> Buttons;
+
+	UPROPERTY(EditAnywhere)
+		TArray<AComboButton*> OrderOfButtons;
+
+	UFUNCTION()
+		void OnButtonPressed(AComboButton* PressedButton);
 
 };
