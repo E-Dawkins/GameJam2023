@@ -1,23 +1,36 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
 #include "BaseInteractable.h"
 #include "ComboButton.generated.h"
 
-/**
- * 
- */
 UCLASS()
 class GAMEJAM2023_API AComboButton : public ABaseInteractable
 {
 	GENERATED_BODY()
 
 public:
+	AComboButton();
+
+	virtual void BeginPlay() override;
 	virtual void OnInteract() override;
 
+	void SetActivatedState(bool bState);
+
+public:
 	DECLARE_DELEGATE_OneParam(FButtonCallback, AComboButton*);
 	FButtonCallback Callback;
+
+	UPROPERTY(EditAnywhere)
+		bool bIsActivated = false;
+
+	UPROPERTY(VisibleAnywhere)
+		UStaticMeshComponent* LeverHandle;
+
+	UPROPERTY(EditAnywhere)
+		FRotator ActivatedRotation;
+
+	UPROPERTY(EditAnywhere)
+		FRotator DeActivatedRotation;
 	
 };

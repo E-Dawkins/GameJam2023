@@ -3,6 +3,7 @@
 
 #include "Item.h"
 #include "FirstPersonCharacter.h"
+#include "EngineUtils.h"
 
 // Sets default values for this component's properties
 AItem::AItem()
@@ -22,11 +23,14 @@ void AItem::OnInteract()
 {
 	Super::OnInteract();
 
-	AFirstPersonCharacter* Player = Cast<AFirstPersonCharacter>(GetWorld()->GetFirstPlayerController()->GetOwner());
-	
+	TActorIterator<AFirstPersonCharacter> PlayerItr = TActorIterator<AFirstPersonCharacter>(GetWorld());
+	AFirstPersonCharacter* Player = *PlayerItr;
+
 	if (Player)
 	{
-		UE_LOG(LogTemp, Error, TEXT("Player: %s"), *Player->GetName());
+		Player->Inventory.Add(this);
+		SetActorHiddenInGame(true);
+		SetActorEnableCollision(false);
 	}
 }
 

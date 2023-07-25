@@ -2,6 +2,8 @@
 
 
 #include "Lock.h"
+#include "FirstPersonCharacter.h"
+#include "EngineUtils.h"
 
 // Sets default values for this component's properties
 ALock::ALock()
@@ -23,6 +25,17 @@ void ALock::OnInteract()
 
 	if (Key)
 	{
-		UE_LOG(LogTemp, Error, TEXT("Key: %s"), *Key->GetName());
+		TActorIterator<AFirstPersonCharacter> PlayerItr = TActorIterator<AFirstPersonCharacter>(GetWorld());
+		AFirstPersonCharacter* Player = *PlayerItr;
+
+		if (Player && Player->Inventory.Contains(Key))
+		{
+			OnUnlock();
+		}
 	}
+}
+
+void ALock::OnUnlock()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Lock unlocked! :)"), *Key->GetName());
 }

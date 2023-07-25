@@ -1,11 +1,32 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
-
 #include "ComboButton.h"
+
+AComboButton::AComboButton()
+{
+	LeverHandle = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Lever"));
+	LeverHandle->SetupAttachment(RootComponent);
+}
+
+void AComboButton::BeginPlay()
+{
+	Super::BeginPlay();
+
+	SetActivatedState(bIsActivated);
+}
 
 void AComboButton::OnInteract()
 {
 	Super::OnInteract();
 
-	Callback.Execute(this);
+	SetActivatedState(!bIsActivated);
+	Callback.ExecuteIfBound(this);
+}
+
+void AComboButton::SetActivatedState(bool bState)
+{
+	bIsActivated = bState;
+
+	if (LeverHandle)
+	{
+		LeverHandle->SetRelativeRotation(bIsActivated ? ActivatedRotation : DeActivatedRotation);
+	}
 }

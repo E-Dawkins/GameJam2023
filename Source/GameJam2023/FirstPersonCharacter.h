@@ -4,7 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "BaseInteractable.h"
+#include "Item.h"
 
 #include "FirstPersonCharacter.generated.h"
 
@@ -50,7 +50,7 @@ public:
 		float LookSpeed = 1;
 
 	UPROPERTY(VisibleAnywhere)
-		TArray<ABaseInteractable*> Inventory;
+		TArray<AItem*> Inventory;
 
 private:
 	UPROPERTY()

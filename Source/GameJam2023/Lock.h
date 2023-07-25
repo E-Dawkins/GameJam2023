@@ -27,5 +27,7 @@ public:
 public:
 	UPROPERTY(EditAnywhere)
 		AItem* Key;
+
+	void OnUnlock();
 		
 };

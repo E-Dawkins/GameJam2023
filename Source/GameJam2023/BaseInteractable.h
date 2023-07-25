@@ -24,7 +24,9 @@ public:
 	virtual void OnInteract();
 
 	void SetInteractState(bool State);
-	bool bShouldInteract = false;
+
+	UPROPERTY(VisibleAnywhere)
+		bool bShouldInteract = false;
 
 	UPROPERTY(EditInstanceOnly)
 		UStaticMeshComponent* StaticMesh;

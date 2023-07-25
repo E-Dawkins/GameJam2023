@@ -10,7 +10,7 @@ ABaseInteractable::ABaseInteractable()
 	// off to improve performance if you don't need them.
 
 	StaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Static Mesh"));
-	RootComponent = StaticMesh;
+	SetRootComponent(StaticMesh);
 
 }
 

@@ -6,8 +6,6 @@
 // Sets default values
 AComboLock::AComboLock()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
-	PrimaryActorTick.bCanEverTick = true;
 
 }
 
@@ -16,21 +14,44 @@ void AComboLock::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	for (auto b : Buttons)
+	for (auto b : CorrectButtons)
 	{
 		b->Callback.BindUObject(this, &AComboLock::OnButtonPressed);
 	}
 
-}
-
-// Called every frame
-void AComboLock::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
+	for (auto b : WrongButtons)
+	{
+		b->Callback.BindUObject(this, &AComboLock::OnButtonPressed);
+	}
 }
 
 void AComboLock::OnButtonPressed(AComboButton* PressedButton)
 {
-	 
+	// If any of the wrong 'buttons' are activated, early return
+	for (auto b : WrongButtons)
+	{
+		if (b->bIsActivated)
+		{
+			return;
+		}
+	}
+
+	// If any of the correct 'buttons' are not activated, early return
+	for (auto b : CorrectButtons)
+	{
+		if (!b->bIsActivated)
+		{
+			return;
+		}
+	}
+
+	OnUnlock();
+}
+
+void AComboLock::OnUnlock()
+{
+	if (ActorToDestroy)
+	{
+		ActorToDestroy->Destroy();
+	}
 }
