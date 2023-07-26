@@ -18,6 +18,7 @@ void AComboButton::OnInteract()
 	Super::OnInteract();
 
 	SetActivatedState(!bIsActivated);
+
 	Callback.ExecuteIfBound(this);
 }
 
