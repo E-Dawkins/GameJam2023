@@ -39,4 +39,7 @@ public:
 	UPROPERTY(EditAnywhere)
 		AActor* ActorToDestroy;
 
+	UPROPERTY(EditAnywhere)
+		bool bDestroyButtons = false;
+
 };

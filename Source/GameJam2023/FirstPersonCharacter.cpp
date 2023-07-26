@@ -3,6 +3,7 @@
 
 #include "FirstPersonCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "Blueprint/UserWidget.h"
 
 // Sets default values
 AFirstPersonCharacter::AFirstPersonCharacter()
@@ -16,7 +17,19 @@ AFirstPersonCharacter::AFirstPersonCharacter()
 void AFirstPersonCharacter::BeginPlay()
 {
 	Super::BeginPlay();
+
+	HUD = CreateWidget<UUserWidget>(GetWorld(), HUDClass);
+	if (HUD)
+	{
+		HUD->AddToViewport();
+	}
 	
+	HUD_Interact = CreateWidget<UUserWidget>(GetWorld(), HUDInteractClass);
+	if (HUD_Interact)
+	{
+		HUD_Interact->AddToViewport();
+		HUD_Interact->SetVisibility(ESlateVisibility::Hidden);
+	}
 }
 
 // Called every frame
@@ -63,10 +76,23 @@ void AFirstPersonCharacter::CheckForInteractable()
 	{
 		CurrentInteractee = Cast<ABaseInteractable>(HitResult.GetActor());
 
-		if (CurrentInteractee && CurrentInteractee->bShouldInteract)
+		if (CurrentInteractee)
 		{
-			CurrentInteractee->OnInteract();
+			if (HUD_Interact)
+			{
+				HUD_Interact->SetVisibility(ESlateVisibility::Visible);
+			}
+
+			if (CurrentInteractee->bShouldInteract)
+			{
+				CurrentInteractee->OnInteract();
+			}
 		}
+	}
+	
+	if ((!HitResult.GetActor() || !CurrentInteractee) && HUD_Interact)
+	{
+		HUD_Interact->SetVisibility(ESlateVisibility::Hidden);
 	}
 }
 

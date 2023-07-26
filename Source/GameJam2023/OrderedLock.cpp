@@ -59,5 +59,13 @@ void AOrderedLock::OnUnlock()
 	{
 		ActorToDestroy->Destroy();
 	}
+
+	if (bDestroyButtons)
+	{
+		for (auto b : AllButtons)
+		{
+			b->Destroy();
+		}
+	}
 }
 

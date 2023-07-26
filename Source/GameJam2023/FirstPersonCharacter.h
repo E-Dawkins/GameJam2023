@@ -52,6 +52,12 @@ public:
 	UPROPERTY(VisibleAnywhere)
 		TArray<AItem*> Inventory;
 
+	UPROPERTY(EditAnywhere) TSubclassOf<class UUserWidget> HUDClass;
+	UPROPERTY() UUserWidget* HUD;
+
+	UPROPERTY(EditAnywhere) TSubclassOf<class UUserWidget> HUDInteractClass;
+	UPROPERTY() UUserWidget* HUD_Interact;
+
 private:
 	UPROPERTY()
 		ABaseInteractable* CurrentInteractee;

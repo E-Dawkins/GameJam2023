@@ -41,4 +41,9 @@ void ALock::OnUnlock()
 	{
 		ActorToDestroy->Destroy();
 	}
+
+	if (bDestroySelf)
+	{
+		Destroy();
+	}
 }

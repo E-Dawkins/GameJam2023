@@ -5,6 +5,9 @@
 # Visual Studio 2015 user specific files
 .vs/
 
+[Bb]uilds/*
+[Bb]uild/*
+
 # Compiled Object files
 *.slo
 *.lo

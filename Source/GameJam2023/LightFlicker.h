@@ -3,37 +3,26 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Item.h"
-
-#include "Lock.generated.h"
+#include "Components/ActorComponent.h"
+#include "LightFlicker.generated.h"
 
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
-class GAMEJAM2023_API ALock : public ABaseInteractable
+class GAMEJAM2023_API ULightFlicker : public UActorComponent
 {
 	GENERATED_BODY()
 
 public:	
 	// Sets default values for this component's properties
-	ALock();
+	ULightFlicker();
 
 protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:
-	virtual void OnInteract() override;
+public:	
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-public:
-	UPROPERTY(EditAnywhere)
-		AItem* Key;
-
-	void OnUnlock();
-
-	UPROPERTY(EditAnywhere)
-		AActor* ActorToDestroy;
-
-	UPROPERTY(EditAnywhere)
-		bool bDestroySelf = false;
 		
 };
