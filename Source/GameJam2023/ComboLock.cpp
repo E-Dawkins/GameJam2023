@@ -16,12 +16,14 @@ void AComboLock::BeginPlay()
 	
 	for (auto b : CorrectButtons)
 	{
-		b->Callback.BindUObject(this, &AComboLock::OnButtonPressed);
+		b->Callbacks.Add(AComboButton::FButtonCallback());
+		b->Callbacks.Last().BindUObject(this, &AComboLock::OnButtonPressed);
 	}
 
 	for (auto b : WrongButtons)
 	{
-		b->Callback.BindUObject(this, &AComboLock::OnButtonPressed);
+		b->Callbacks.Add(AComboButton::FButtonCallback());
+		b->Callbacks.Last().BindUObject(this, &AComboLock::OnButtonPressed);
 	}
 }
 

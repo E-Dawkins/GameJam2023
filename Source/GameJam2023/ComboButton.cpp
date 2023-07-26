@@ -19,7 +19,10 @@ void AComboButton::OnInteract()
 
 	SetActivatedState(!bIsActivated);
 
-	Callback.ExecuteIfBound(this);
+	for (auto c : Callbacks)
+	{
+		c.ExecuteIfBound(this);
+	}
 }
 
 void AComboButton::SetActivatedState(bool bState)

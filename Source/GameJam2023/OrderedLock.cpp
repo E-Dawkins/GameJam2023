@@ -18,7 +18,8 @@ void AOrderedLock::BeginPlay()
 
 	for (auto b : AllButtons)
 	{
-		b->Callback.BindUObject(this, &AOrderedLock::OnButtonPressed);
+		b->Callbacks.Add(AComboButton::FButtonCallback());
+		b->Callbacks.Last().BindUObject(this, &AOrderedLock::OnButtonPressed);
 	}
 }
 

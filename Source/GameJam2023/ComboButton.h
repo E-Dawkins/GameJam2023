@@ -19,7 +19,7 @@ public:
 
 public:
 	DECLARE_DELEGATE_OneParam(FButtonCallback, AComboButton*);
-	FButtonCallback Callback;
+	TArray<FButtonCallback> Callbacks;
 
 	UPROPERTY(EditAnywhere)
 		bool bIsActivated = false;
